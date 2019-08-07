@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>  {% block title %}{% endblock title %}  </title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+
+    {% block style %} {% endblock style %}
+        
+</head>
+<body>
+    <nav class="navbaar">
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'core:index' %}">Home</a></li>
+                <li><a href="{% url 'users:list_users' %}">Lista</a></li>
+                <li><a href="{% url 'posts:posts_posts' %}">Postagens</a></li> 
+                <li><a href="{% url 'posts:novo_post' %}">Criar novo post</a></li><!-- url 'app:name(urls)' -->
+                <!-- redirecionamos apos o clique -->
+                <li><a href="{% url 'categorias:criar_categorias' %}">Criar nova categoria</a></li>
+            </ul>
+        </div>
+    </nav>    
+    
+    {% block body %}
+    {% endblock body %}
+
+</body>
+</html>

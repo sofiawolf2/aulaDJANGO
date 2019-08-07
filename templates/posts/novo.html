@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+<!-- essas chaves e porcentagens é usado para nos conectar com os padrões do base.html
+Dessa forma so temos a necessidade de fazer as mudanças realmente necessárias
+evitando ter muito códico repetido. assim só mudamos o que realmente diferencia
+um html de outro, economizando codico, tempo e esforços -->
+{% load static %}
+
+{% block title %}
+    CRIANDO
+{% endblock title %}
+    
+{% block scripts %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock scripts %}
+
+{% block body %}
+
+<form method="post">
+    <!-- method post ou get. post é do tipo que envia algo. -->
+    {% csrf_token %}
+    {{form.as_p}} <!--esse comando é padrão do django. 
+    O q ele faz?
+    ele pega as entradas que definimos no forms.py 'fields = ['autor','texto']'
+    e pega essas duas entradas como o que seriam os input q colocariamos um de cada vez-->
+    <input type="submit" value="Enviar">
+</form>
+
+
+{% endblock body %}

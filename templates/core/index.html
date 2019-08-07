@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+<!-- essas chaves e porcentagens é usado para nos conectar com os padrões do base.html
+Dessa forma so temos a necessidade de fazer as mudanças realmente necessárias
+evitando ter muito códico repetido. assim só mudamos o que realmente diferencia
+um html de outro, economizando codico, tempo e esforços -->
+{% load static %}
+
+{% block title %}
+    HOME
+{% endblock title %}
+
+{% block style %} 
+    <style>
+        body{
+            background-image: url(https://blog.emania.com.br/content/uploads/2017/06/Tela-do-Windows-XP.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    </style>
+{% endblock style %}
+
+
+{% block scripts %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock scripts %}
+
+{% block body %}
+<h1>
+    OI MEU POVO
+</h1>
+
+{% for u in posts %}
+
+{% endfor %}
+
+{% endblock body %}

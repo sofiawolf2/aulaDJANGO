@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+<!-- essas chaves e porcentagens é usado para nos conectar com os padrões do base.html
+Dessa forma so temos a necessidade de fazer as mudanças realmente necessárias
+evitando ter muito códico repetido. assim só mudamos o que realmente diferencia
+um html de outro, economizando codico, tempo e esforços -->
+{% load static %}
+
+{% block title %}
+BLOGANDO
+{% endblock title %}
+
+{% block style %}
+<style>
+
+</style>
+{% endblock style %}
+
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock scripts %}
+
+{% block body %}
+
+<div class="todosospostes">
+    {% for u in posts %}
+    <div class="info">
+
+        {{u.autor}}<br><br>
+
+        {{u.texto}}<br><br>
+
+        {{u.categoria}}<br><br>
+
+        {{u.created_at}}<br>
+        <div class="a">
+            <a href="{% url 'posts:edit_post' u.id %}">editar postagem</a>
+            <a href="{% url 'posts:delet_post' u.id %}">Deletar</a>
+        </div>
+    </div>
+
+    {% empty %}
+</div> <!--esse empty é tipo 'caso nao'.. tipo um else da vida-->
+    <p>Você não tem postagens</p>
+    <a href="{% url 'posts:novo_post' %}">Criar uma postagem</a>
+    {% endfor %}
+
+
+{% endblock body %}
