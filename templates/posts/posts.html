@@ -31,11 +31,17 @@ BLOGANDO
 
         <a href="{% url 'categorias:edit_categorias' u.categorias.id %}"> {{u.categorias}}</a> |
         <a href="{% url 'categorias:delet_categorias' u.categorias.id %}"> Excluir </a> <br><br>
+            
 
         {{u.created_at}}<br>
             
             <a class="links" href="{% url 'posts:edit_post' u.id %}">Editar</a>
             <a class="links" href="{% url 'posts:delet_post' u.id %}">Deletar</a>
+            
+            <a class="links" href="{% url 'comentarios:list_comentarios' %}">Ver comentarios</a>
+
+                
+            
     </div>
 
     {% empty %}

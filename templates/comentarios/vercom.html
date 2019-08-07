@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+<!-- essas chaves e porcentagens é usado para nos conectar com os padrões do base.html
+Dessa forma so temos a necessidade de fazer as mudanças realmente necessárias
+evitando ter muito códico repetido. assim só mudamos o que realmente diferencia
+um html de outro, economizando codico, tempo e esforços -->
+{% load static %}
+
+{% block title %}
+Comentarios
+{% endblock title %}
+
+{% block style %}
+<style>
+
+</style>
+{% endblock style %}
+
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock scripts %}
+
+{% block body %}
+
+<div class="todosospostes">
+    {% for u in comentarios %}
+    <!-- aqui comentarios vem do context_object_name de views-->
+    <div class="info">
+        {{u.post}}<br><br>
+        {{u.comentario}}<br><br> 
+        <!-- aqui, comentario vem do tributo comentario da class -->
+
+        <a class="links" href="{% url 'comentarios:editar_comentarios' u.id %}">Editar</a>
+        <a class="links" href="{% url 'comentarios:delet_comentarios' u.id %}">Deletar</a>
+        
+
+    </div>
+
+    {% empty %}
+</div>
+<!--esse empty é tipo 'caso nao'.. tipo um else da vida-->
+<p>Esse poste não tem comentarios</p>
+{% endfor %}
+
+
+{% endblock body %}
