@@ -34,7 +34,7 @@
 
 }
 
-.info a{
+.links{
     display: flex;
     border: 2px solid salmon;
     justify-content: center;
@@ -42,7 +42,7 @@
     text-decoration: none; /*remove hyperlink css*/
     color: red;
 }
-.info a:hover{
+.likns:hover{
     color: blueviolet;
 }
 .todosospostes{

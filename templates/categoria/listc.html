@@ -25,11 +25,9 @@ CATEGORIZANDO
     {% for u in categorias %}
     <div class="info">
         <center>{{u.categorias}}<br><br></center>
-
-        <div class="a">
-            <a href="{% url 'categorias:edit_categorias' u.id %}">Editar</a>
-            <a href="{% url 'categorias:delet_categorias' u.id %}">Deletar</a>
-        </div>
+        
+            <a class = "links" href="{% url 'categorias:edit_categorias' u.id %}">Editar</a>
+            <a class = "links" href="{% url 'categorias:delet_categorias' u.id %}">Deletar</a>
     </div>
 
     {% empty %}

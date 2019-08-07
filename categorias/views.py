@@ -23,11 +23,11 @@ class CategoriasUpdateView(generic.UpdateView):
     model = Categorias
     fields = ['categorias']
     template_name = 'categoria/editc.html'
-    success_url = reverse_lazy('categorias:list_categorias')
+    success_url = reverse_lazy('posts:posts_posts')
 
 class CategoriasDeletView(generic.DeleteView):
     model = Categorias
     context_object_name = 'categorias' #faz coneção com o 'post' do for.
     #ta no singular pq vamos excluir um post por vez
     template_name= 'categoria/excluir.html'
-    success_url = reverse_lazy('categorias:list_categorias')
+    success_url = reverse_lazy('posts:posts_posts')

@@ -29,13 +29,13 @@ BLOGANDO
 
         {{u.texto}}<br><br>
 
-        {{u.categorias}}<br><br>
+        <a href="{% url 'categorias:edit_categorias' u.categorias.id %}"> {{u.categorias}}</a> |
+        <a href="{% url 'categorias:delet_categorias' u.categorias.id %}"> Excluir </a> <br><br>
 
         {{u.created_at}}<br>
-        <div class="a">
-            <a href="{% url 'posts:edit_post' u.id %}">Editar</a>
-            <a href="{% url 'posts:delet_post' u.id %}">Deletar</a>
-        </div>
+            
+            <a class="links" href="{% url 'posts:edit_post' u.id %}">Editar</a>
+            <a class="links" href="{% url 'posts:delet_post' u.id %}">Deletar</a>
     </div>
 
     {% empty %}
