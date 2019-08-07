@@ -22,7 +22,7 @@ class PostCreateView(generic.CreateView):
 
 class PostUpdateView(generic.UpdateView):
     model = Posts
-    fields = ['autor','texto','categoria']
+    fields = ['autor','texto','categorias']
     template_name = 'posts/edit.html'
     success_url = reverse_lazy('posts:posts_posts')
 

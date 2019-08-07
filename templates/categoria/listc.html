@@ -6,7 +6,7 @@ um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
 
 {% block title %}
-BLOGANDO
+CATEGORIZANDO
 {% endblock title %}
 
 {% block style %}
@@ -22,26 +22,20 @@ BLOGANDO
 {% block body %}
 
 <div class="todosospostes">
-    {% for u in posts %}
+    {% for u in categorias %}
     <div class="info">
+        <center>{{u.categorias}}<br><br></center>
 
-        {{u.autor}}<br><br>
-
-        {{u.texto}}<br><br>
-
-        {{u.categorias}}<br><br>
-
-        {{u.created_at}}<br>
         <div class="a">
-            <a href="{% url 'posts:edit_post' u.id %}">Editar</a>
-            <a href="{% url 'posts:delet_post' u.id %}">Deletar</a>
+            <a href="{% url 'categorias:edit_categorias' u.id %}">Editar</a>
+            <a href="{% url 'categorias:delet_categorias' u.id %}">Deletar</a>
         </div>
     </div>
 
     {% empty %}
 </div> <!--esse empty é tipo 'caso nao'.. tipo um else da vida-->
-    <p>Você não tem postagens</p>
-    <a href="{% url 'posts:novo_post' %}">Criar uma postagem</a>
+    <p>Você não tem uma categoria</p>
+    <a href="{% url 'categorias:criar_categorias' %}">Criar uma categoria</a>
     {% endfor %}
 
 
