@@ -4,6 +4,7 @@ Dessa forma so temos a necessidade de fazer as mudanças realmente necessárias
 evitando ter muito códico repetido. assim só mudamos o que realmente diferencia
 um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
+{% load widget_tweaks %}
 
 {% block title %}
 EDITANDO CATEGORIAS
@@ -18,12 +19,11 @@ EDITANDO CATEGORIAS
 
 
 <h3> Modificar Categoria</h3>
-<form method="post">
+<form class="editarEcriar" method="post">
     {% csrf_token %}
-    {{form.as_p}}
+    Alterar categoria:{% render_field form.categorias %}
     <br><br>
     <button type="submit" class="btn btn-info">Confirmar</button>
-
 </form>
 </center>
 {% endblock body %}

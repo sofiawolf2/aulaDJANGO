@@ -4,10 +4,9 @@ Dessa forma so temos a necessidade de fazer as mudanças realmente necessárias
 evitando ter muito códico repetido. assim só mudamos o que realmente diferencia
 um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
-{% load widget_tweaks %}
 
 {% block title %}
-CRIANDO CATEGORIAS
+CADASTRO
 {% endblock title %}
     
 {% block scripts %}
@@ -16,20 +15,16 @@ CRIANDO CATEGORIAS
 
 {% block body %}
 <center>
-
-
-<form class="editarEcriar" method="post">
-    <!-- method post ou get. post é do tipo que envia algo. -->
+<h3> Modificar Postagem</h3>
+<form method="post">
     {% csrf_token %}
-    Nova categoria: {% render_field form.categorias %}
-    <!--esse comando é padrão do django. 
-    O q ele faz?
-    ele pega as entradas que definimos no forms.py 'fields = ['autor','texto']'
-    e pega essas duas entradas como o que seriam os input q colocariamos um de cada vez-->
-    <br>
-    <button type="submit" class="btn btn-success">Enviar</button>
+    {{form.as_p}}
+    <br><br>
+    <button type="submit" class="btn btn-info">Confirmar</button>
+
 </form>
 </center>
 
-
 {% endblock body %}
+
+

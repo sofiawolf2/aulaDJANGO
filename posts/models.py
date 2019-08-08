@@ -5,6 +5,7 @@ from categorias.models import Categorias
 # Create your models here.
 
 class Posts(models.Model):
+    titulo = models.CharField(verbose_name = 'titulo', blank=True, max_length=30) #blank = pode ser vazio
     autor = models.ForeignKey("users.User",verbose_name = 'autor', on_delete = models.CASCADE)
     categorias = models.ForeignKey("categorias.Categorias",verbose_name = 'categorias', on_delete = models.CASCADE)
     texto = models.TextField(verbose_name = 'texto')
@@ -12,7 +13,7 @@ class Posts(models.Model):
     #nós definimos as "entradas" que nossa classe de post terá. Ou seja, autor e texto
 
     def __str__(self):
-        return f'Nº {self.pk} | Autor {self.autor}'
+        return f'{self.titulo} | Autor {self.autor}'
         # isso é como vai ficar o nome do arquivo no admin
 
     class Meta: #estamos alterando novamente as deifinições da classe META que JA EXISTE no django

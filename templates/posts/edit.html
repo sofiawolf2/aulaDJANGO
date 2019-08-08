@@ -4,6 +4,7 @@ Dessa forma so temos a necessidade de fazer as mudanças realmente necessárias
 evitando ter muito códico repetido. assim só mudamos o que realmente diferencia
 um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
+{% load widget_tweaks %}
 
 {% block title %}
 EDITANDO POSTAGENS
@@ -16,9 +17,13 @@ EDITANDO POSTAGENS
 {% block body %}
 <center>
 <h3> Modificar Postagem</h3>
-<form method="post">
+<form class="editarEcriar" method="post">
+
     {% csrf_token %}
-    {{form.as_p}}
+    Título:{% render_field form.titulo %}
+    Autor:{% render_field form.autor %}
+    Categoria:{% render_field form.categorias %}
+    Texto:{% render_field form.texto %}
     <br><br>
     <button type="submit" class="btn btn-info">Confirmar</button>
 

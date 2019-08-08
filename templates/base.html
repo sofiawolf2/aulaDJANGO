@@ -43,6 +43,14 @@
                     <li><a href="{% url 'categorias:criar_categorias'%}">Nova categoria</a></li>
                     <li><a href="{% url 'comentarios:list_comentarios'%}">Comentarios</a></li>
                     <li><a href="{% url 'comentarios:criar_comentarios'%}">Novo comentario</a></li>
+                    {% if not request.user.is_authenticated %}
+                        <li><a href="{% url 'users:login_user'%}">Logar</a></li>
+                        <li><a href="{% url 'users:cadastro_user'%}">Cadestre-se</a></li>
+                    {% else %} 
+                        <li><a href="resquest.user.id">{{request.user}}</a></li>
+                        <li><a href="{% url 'users:logout_user' %}">Logout</a></li>
+                    {% endif %}
+                        
                 </ul>
             </div>
         </div>

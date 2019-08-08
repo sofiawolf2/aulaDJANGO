@@ -4,30 +4,22 @@ Dessa forma so temos a necessidade de fazer as mudanças realmente necessárias
 evitando ter muito códico repetido. assim só mudamos o que realmente diferencia
 um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
-{% load widget_tweaks %}
 
 {% block title %}
-EDITANDO COMENTARIOS
+LOGIN
 {% endblock title %}
-    
+
 {% block scripts %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock scripts %}
 
 {% block body %}
 <center>
-<h3> Modificar Comentario</h3>
-<form class="editarEcriar" method="post">
- 
-    {% csrf_token %}
-    Postagem:{% render_field form.post %}
-    Seu comentário:{% render_field form.comentario %}
-    <br><br>
-    <button type="submit" class="btn btn-info">Confirmar</button>
-
+<form method="post">
+{%csrf_token%}
+{{form.as_p}}
+<button type="submit" class="btn btn-success">Logar</button>
 </form>
 </center>
 
 {% endblock body %}
-
-

@@ -31,9 +31,6 @@
     width: 320px;
     margin: 5px;
     background-color: rgba(208, 255, 239, 0.384);
-    font-family: monospace;
-
-
 }
 
 .butamareloevermelho{
@@ -68,14 +65,19 @@
 }
 .entrada{
     margin-top: 20vh;
-    font-family: monospace;
-
+}
+.editarEcriar{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
 }
 body{
     background-image: url(https://blog.emania.com.br/content/uploads/2017/06/Tela-do-Windows-XP.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
+    font-family: monospace!important;
 }
 
 @media only screen and (max-width: 800px){
@@ -84,6 +86,7 @@ body{
         background-repeat: no-repeat;
         background-position: center center;
         background-attachment: fixed;
+        font-family: monospace!important;
 
     } 
 }

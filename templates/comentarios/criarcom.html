@@ -4,6 +4,7 @@ Dessa forma so temos a necessidade de fazer as mudanças realmente necessárias
 evitando ter muito códico repetido. assim só mudamos o que realmente diferencia
 um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
+{% load widget_tweaks %}
 
 {% block title %}
 CRIANDO COMENTARIOS
@@ -15,10 +16,12 @@ CRIANDO COMENTARIOS
 
 {% block body %}
 <center>
-<form method="post">
+<form class="editarEcriar" method="post">
     <!-- method post ou get. post é do tipo que envia algo. -->
     {% csrf_token %}
-    {{form.as_p}} <!--esse comando é padrão do django. 
+    Postagem: {% render_field form.post %}
+    Seu comentário:{% render_field form.comentario %}
+    <!--esse comando é padrão do django. 
     O q ele faz?
     ele pega as entradas que definimos no forms.py 'fields = ['autor','texto']'
     e pega essas duas entradas como o que seriam os input q colocariamos um de cada vez-->
