@@ -6,7 +6,7 @@ um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
 
 {% block title %}
-    EDITANDO CATEGORIA
+EDITANDO CATEGORIAS
 {% endblock title %}
     
 {% block scripts %}
@@ -14,15 +14,18 @@ um html de outro, economizando codico, tempo e esforços -->
 {% endblock scripts %}
 
 {% block body %}
+<center>
+
 
 <h3> Modificar Categoria</h3>
 <form method="post">
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="Confirmar">
+    <br><br>
+    <button type="submit" class="btn btn-info">Confirmar</button>
 
 </form>
-
+</center>
 {% endblock body %}
 
 

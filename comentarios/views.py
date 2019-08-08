@@ -20,7 +20,7 @@ class ComentariosCreateView(generic.CreateView):
 
 class ComentariosUpdateView(generic.UpdateView):
     model = Comentarios
-    fields = ['post','comentario']
+    fields = ['comentario']
     template_name = 'comentarios/editcom.html'
     success_url = reverse_lazy('comentarios:list_comentarios')
 

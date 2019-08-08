@@ -1,6 +1,6 @@
 .navbaar{
     border: 1px solid black;
-    background-color: gray;
+    background-color: rgb(224, 18, 18) !important;
 }
 
 .menu{
@@ -27,26 +27,63 @@
 }
 
 .info{
-    border: solid black;
-    width: 250px;
+    border: 7px inset rgba(39, 135, 199, 0.623);
+    width: 320px;
     margin: 5px;
+    background-color: rgba(208, 255, 239, 0.384);
+    font-family: monospace;
 
 
 }
 
-.links{
-    display: flex;
-    border: 2px solid salmon;
-    justify-content: center;
-    align-items: flex-end;
-    text-decoration: none; /*remove hyperlink css*/
-    color: red;
+.butamareloevermelho{
+    color: white;
+    text-decoration: none !important; /*remove hyperlink css*/
+
 }
-.likns:hover{
-    color: blueviolet;
+
+.butneutro{
+    color: black;
+    text-decoration: none !important; /*remove hyperlink css*/
+
 }
+
 .todosospostes{
     display: flex;
     flex-flow: row wrap;
 
+}
+.infoEmcima{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+
+}
+.todoslinks{
+    display: flex;
+    justify-content: space-between ;
+    margin: 3px;
+
+
+}
+.entrada{
+    margin-top: 20vh;
+    font-family: monospace;
+
+}
+body{
+    background-image: url(https://blog.emania.com.br/content/uploads/2017/06/Tela-do-Windows-XP.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+@media only screen and (max-width: 800px){
+    body{
+        background-image: url('fundo2.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+
+    } 
 }

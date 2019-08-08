@@ -6,7 +6,7 @@ um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
 
 {% block title %}
-CATEGORIZANDO
+CATEGORIAS
 {% endblock title %}
 
 {% block style %}
@@ -20,21 +20,31 @@ CATEGORIZANDO
 {% endblock scripts %}
 
 {% block body %}
-
 <div class="todosospostes">
     {% for u in categorias %}
     <div class="info">
-        <center>{{u.categorias}}<br><br></center>
-        
-            <a class = "links" href="{% url 'categorias:edit_categorias' u.id %}">Editar</a>
-            <a class = "links" href="{% url 'categorias:delet_categorias' u.id %}">Deletar</a>
+        <div class="infoEmcima">
+            <center>{{u.categorias}}<br><br></center>
+
+
+        </div>
+        <div class="todoslinks">
+            <button type="button" class="btn btn-warning">
+                <a class="butamareloevermelho" href="{% url 'categorias:edit_categorias' u.id %}">Editar</a></button>
+
+            <button type="button" class="btn btn-danger">
+                <a class="butamareloevermelho" href="{% url 'categorias:delet_categorias' u.id %}">Deletar</a></button>
+
+        </div>
     </div>
 
-    {% empty %}
-</div> <!--esse empty é tipo 'caso nao'.. tipo um else da vida-->
-    <p>Você não tem uma categoria</p>
-    <a href="{% url 'categorias:criar_categorias' %}">Criar uma categoria</a>
-    {% endfor %}
+
+{% empty %}
+</div>
+<!--esse empty é tipo 'caso nao'.. tipo um else da vida-->
+<p>Você não tem uma categoria</p>
+<a href="{% url 'categorias:criar_categorias' %}">Criar uma categoria</a>
+{% endfor %}
 
 
 {% endblock body %}

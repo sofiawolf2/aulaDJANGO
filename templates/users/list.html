@@ -6,19 +6,23 @@ um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
 
 {% block title %}
-    Blog | Usuários
+Blog | Usuários
 {% endblock title %}
-    
+
 {% block scripts %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock scripts %}
 
 {% block body %}
-    
+<div class="todosospostes">
+
 {% for u in users %}
-       <p> {{u.email}} </p>
-       <p> {{u.username}} </p>
+
+<div class="info">
+    <p> Usuário: {{u.username}} </p>
+    <p> Email: {{u.email}} </p>
+</div>
 {% endfor %}
+</div>
 
 {% endblock body %}
-    

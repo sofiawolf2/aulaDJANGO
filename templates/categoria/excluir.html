@@ -6,7 +6,7 @@ um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
 
 {% block title %}
-    EXCLUINDO CAREGORIA
+DELETANDO CATEGORIAS
 {% endblock title %}
     
 {% block scripts %}
@@ -14,15 +14,17 @@ um html de outro, economizando codico, tempo e esforços -->
 {% endblock scripts %}
 
 {% block body %}
-
+<center>
 <h3> Deletar categoria?</h3>
 <form method="post">
     {% csrf_token %}
     <p>Tem certeza de que quer apagar essa caretgoria?</p>
     {{categorias.categorias}}
-    <input type="submit" value="Deletar">
+    <br><br>
+    <button type="submit" class="btn btn-danger">Deletar</button>
 
 </form>
+</center>
 
 {% endblock body %}
 

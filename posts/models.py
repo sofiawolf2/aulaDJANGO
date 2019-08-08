@@ -12,7 +12,7 @@ class Posts(models.Model):
     #nós definimos as "entradas" que nossa classe de post terá. Ou seja, autor e texto
 
     def __str__(self):
-        return f'postagem {self.pk} | Autor {self.autor} | Criado em {self.created_at}'
+        return f'Nº {self.pk} | Autor {self.autor}'
         # isso é como vai ficar o nome do arquivo no admin
 
     class Meta: #estamos alterando novamente as deifinições da classe META que JA EXISTE no django

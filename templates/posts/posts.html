@@ -6,7 +6,7 @@ um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
 
 {% block title %}
-BLOGANDO
+POSTAGENS
 {% endblock title %}
 
 {% block style %}
@@ -24,31 +24,39 @@ BLOGANDO
 <div class="todosospostes">
     {% for u in posts %}
     <div class="info">
+        <div class="infoEmcima">
 
-        {{u.autor}}<br><br>
+        Autor: {{u.autor}}<br><br>
 
         {{u.texto}}<br><br>
-
+            <div>
+        Categoria:
         <a href="{% url 'categorias:edit_categorias' u.categorias.id %}"> {{u.categorias}}</a> |
         <a href="{% url 'categorias:delet_categorias' u.categorias.id %}"> Excluir </a> <br><br>
-            
+    </div>
+
 
         {{u.created_at}}<br>
-            
-            <a class="links" href="{% url 'posts:edit_post' u.id %}">Editar</a>
-            <a class="links" href="{% url 'posts:delet_post' u.id %}">Deletar</a>
-            
-            <a class="links" href="{% url 'comentarios:list_comentarios' %}">Ver comentarios</a>
+    </div>
+        <div class="todoslinks" >
+            <button type="button" class="btn btn-warning">
+                <a class="butamareloevermelho" href="{% url 'posts:edit_post' u.id %}">Editar</a></button>
 
-                
-            
+            <button type="button" class="btn btn-danger">
+                <a class="butamareloevermelho" href="{% url 'posts:delet_post' u.id %}">Deletar</a></button>
+
+            <button type="button" class="btn btn-default">
+                <a class="butneutro" href="{% url 'comentarios:list_comentarios' %}">Ver comentarios</a></button>
+        </div>
     </div>
 
     {% empty %}
-</div> <!--esse empty é tipo 'caso nao'.. tipo um else da vida-->
-    <p>Você não tem postagens</p>
-    <a href="{% url 'posts:novo_post' %}">Criar uma postagem</a>
-    {% endfor %}
+</div>
+
+<!--esse empty é tipo 'caso nao'.. tipo um else da vida-->
+<p>Você não tem postagens</p>
+<a href="{% url 'posts:novo_post' %}">Criar uma postagem</a>
+{% endfor %}
 
 
 {% endblock body %}

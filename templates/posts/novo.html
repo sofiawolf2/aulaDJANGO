@@ -6,7 +6,7 @@ um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
 
 {% block title %}
-    CRIANDO
+CRIANDO POSTAGENS
 {% endblock title %}
     
 {% block scripts %}
@@ -14,7 +14,7 @@ um html de outro, economizando codico, tempo e esforços -->
 {% endblock scripts %}
 
 {% block body %}
-
+<center>
 <form method="post">
     <!-- method post ou get. post é do tipo que envia algo. -->
     {% csrf_token %}
@@ -22,8 +22,10 @@ um html de outro, economizando codico, tempo e esforços -->
     O q ele faz?
     ele pega as entradas que definimos no forms.py 'fields = ['autor','texto']'
     e pega essas duas entradas como o que seriam os input q colocariamos um de cada vez-->
-    <input type="submit" value="Enviar">
+    <br>
+    <button type="submit" class="btn btn-success">Enviar</button>
 </form>
+</center>
 
 
 {% endblock body %}

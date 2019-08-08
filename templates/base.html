@@ -1,36 +1,57 @@
 {% load static %}
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>  {% block title %}{% endblock title %}  </title>
+    <title> {% block title %}{% endblock title %} </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <!-- testando -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- testando -->
 
     {% block style %} {% endblock style %}
-        
+
 </head>
+
 <body>
-    <nav class="navbaar">
-        <div class="menu">
-            <ul>
-                <li><a href="{% url 'core:index' %}">Home</a></li>
-                <li><a href="{% url 'users:list_users' %}">Lista</a></li>
-                <li><a href="{% url 'posts:posts_posts' %}">Postagens</a></li> 
-                <li><a href="{% url 'posts:novo_post' %}">Criar novo post</a></li><!-- url 'app:name(urls)' -->
-                <!-- redirecionamos apos o clique -->
-                <li><a href="{% url 'categorias:list_categorias'%}">Categorias</a></li>
-                <li><a href="{% url 'categorias:criar_categorias'%}">Criar nova categoria</a></li>
-                <li><a href="{% url 'comentarios:list_comentarios'%}">Ver comentarios</a></li>
-                <li><a href="{% url 'comentarios:criar_comentarios'%}">Criar novo comentarios</a></li>
-            </ul>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'core:index' %}">Home</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"></li>
+                    <li class="dropdown">
+                    <li><a href="{% url 'users:list_users' %}">Lista</a></li>
+                    <li><a href="{% url 'posts:posts_posts' %}">Postagens</a></li>
+                    <li><a href="{% url 'posts:novo_post' %}">Novo post</a></li><!-- url 'app:name(urls)' -->
+                    <!-- redirecionamos apos o clique -->
+                    <li><a href="{% url 'categorias:list_categorias'%}">Categorias</a></li>
+                    <li><a href="{% url 'categorias:criar_categorias'%}">Nova categoria</a></li>
+                    <li><a href="{% url 'comentarios:list_comentarios'%}">Comentarios</a></li>
+                    <li><a href="{% url 'comentarios:criar_comentarios'%}">Novo comentario</a></li>
+                </ul>
+            </div>
         </div>
-    </nav>    
-    
+    </nav>
+
+
     {% block body %}
     {% endblock body %}
 
 </body>
+
 </html>

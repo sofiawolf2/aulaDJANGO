@@ -6,28 +6,30 @@ um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
 
 {% block title %}
-    HOME
+HOME
 {% endblock title %}
 
-{% block style %} 
-    <style>
-        body{
-            background-image: url(https://blog.emania.com.br/content/uploads/2017/06/Tela-do-Windows-XP.jpg);
-            background-repeat: no-repeat;
-            background-size: 100%;
-        }
-    </style>
+{% block style %}
 {% endblock style %}
 
 
 {% block scripts %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock scripts %}
 
 {% block body %}
-<h1>
-    OI MEU POVO
-</h1>
+<div class="entrada">
+    <center>
+        <h1>
+            BEM VINDO
+        </h1>
+        <br>
+        <h4>
+            ao blog dos usuários
+        </h4>
+
+    </center>
+</div>
 
 {% for u in posts %}
 

@@ -6,7 +6,7 @@ um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
 
 {% block title %}
-Comentarios
+COMENTARIOS
 {% endblock title %}
 
 {% block style %}
@@ -20,23 +20,31 @@ Comentarios
 {% endblock scripts %}
 
 {% block body %}
-
 <div class="todosospostes">
     {% for u in comentarios %}
-    <!-- aqui comentarios vem do context_object_name de views-->
     <div class="info">
-        {{u.post}}<br><br>
-        {{u.comentario}}<br><br> 
-        <!-- aqui, comentario vem do tributo comentario da class -->
+        <div class="infoEmcima">
+            Post: {{u.post}}<br><br>
+            Comentário:<br>{{u.comentario}}<br><br>
 
-        <a class="links" href="{% url 'comentarios:editar_comentarios' u.id %}">Editar</a>
-        <a class="links" href="{% url 'comentarios:delet_comentarios' u.id %}">Deletar</a>
-        
 
+        </div>
+        <div class="todoslinks">
+            <button type="button" class="btn btn-warning">
+                <a class="butamareloevermelho"
+                    href="{% url 'comentarios:editar_comentarios' u.id %}">Editar</a></button>
+
+            <button type="button" class="btn btn-danger">
+                <a class="butamareloevermelho"
+                    href="{% url 'comentarios:delet_comentarios' u.id %}">Deletar</a></button>
+
+        </div>
     </div>
 
-    {% empty %}
+
+{% empty %}
 </div>
+
 <!--esse empty é tipo 'caso nao'.. tipo um else da vida-->
 <p>Esse poste não tem comentarios</p>
 {% endfor %}
