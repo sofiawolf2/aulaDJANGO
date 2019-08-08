@@ -26,3 +26,12 @@ class UserCadastroView( generic.CreateView):
     template_name = 'users/cadastro.html'
     success_url = reverse_lazy('users:cadastro_user')
 
+class UserSobreView(LoginRequiredMixin, generic.DetailView):
+    model = User
+    context_object_name = 'users'
+    template_name = 'users/sobre.html'
+    success_url = reverse_lazy('users:sobre_user')
+    
+
+    
+

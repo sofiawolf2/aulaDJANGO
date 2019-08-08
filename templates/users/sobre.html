@@ -6,37 +6,24 @@ um html de outro, economizando codico, tempo e esforços -->
 {% load static %}
 
 {% block title %}
-HOME
+Sobre Usuário
 {% endblock title %}
-
-{% block style %}
-{% endblock style %}
-
 
 {% block scripts %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock scripts %}
 
 {% block body %}
-<div class="entrada">
-    <center>
-        <h1>
-            BEM VINDO
-        </h1>
-        <br>
-        <h4>
-            ao blog dos usuários
-        </h4>
+<div class="todosospostes">
 
-        {% include 'includes/cards.html' %}
 
-    </center>
+<div class="info">
+    <p> Usuário: {{users.username}} </p>
+    <p> Email: {{users.email}} </p>
+    <p> Criado em: {{users.created_at}} </p>
+    <p> Último acesso: {{users.last_login}} </p>
+    <p> É superuser: {{users.is_staff}} </p>
 </div>
-
-
-
-{% for u in posts %}
-
-{% endfor %}
+</div>
 
 {% endblock body %}

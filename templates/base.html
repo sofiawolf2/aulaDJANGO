@@ -47,7 +47,7 @@
                         <li><a href="{% url 'users:login_user'%}">Logar</a></li>
                         <li><a href="{% url 'users:cadastro_user'%}">Cadestre-se</a></li>
                     {% else %} 
-                        <li><a href="resquest.user.id">{{request.user}}</a></li>
+                        <li><a href="{% url 'users:sobre_user' request.user.id %}">{{request.user}}</a></li>
                         <li><a href="{% url 'users:logout_user' %}">Logout</a></li>
                     {% endif %}
                         
